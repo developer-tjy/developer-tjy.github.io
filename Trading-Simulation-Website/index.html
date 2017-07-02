@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>Portfolio Simulation</title>
+		<link rel = "stylesheet" href = "CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="CSS/index.css">
+	</head>
+	<body>
+		<section class = "col-xs-12" id = "title">
+			<p class = "well">Portfolio Simulation</p>
+		</section>
+		<section class = "col-xs-12" id = "input-div">
+			<ul class = "nav nav-tabs nav-justified" role = "tablist" id = "tabs-input">
+				<li class = "active left-li"><a href = "#variable-risk" role = "tab" data-toggle = "tab">Variable Risk</a></li>
+				<li class = "right-li"><a href = "#fixed-risk" role = "tab" data-toggle = "tab">Fixed Risk</a></li>
+			</ul>
+			<!-- <fieldset class = "well" id = "inner-input-div"> -->
+				<!-- <legend>Portfolio Simulation</legend> -->
+			<div class = "tab-content" id = "inner-input-div">
+				<div class = "tab-pane active" id = "variable-risk">	
+					<div class = "input-fields">
+						<label for = "portfolio-value-input">Initial Portfolio Value: </label>
+						<input type = "number" id = "portfolio-value-input" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "trades-input">No of Trades <br/> (Per Year):</label>
+						<input type = "number" id = "trades-input" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "reward-risk-input">RewardRisk Ratio: </label>
+						<input type = "number" id = "reward-risk-input" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "percentage-risk-input">Percentage Risk <br/> (Per Trade): </label>
+						<input type = "number" id = "percentage-risk-input" onkeypress = "return inputValidation(event)">
+						<span class = "percentage-text">%</span>
+					</div>
+					<div class = "input-fields">
+						<label for = "win-rate-input">Win Rate: </label>
+						<input type = "number" id = "win-rate-input" onkeypress = "return inputValidation(event)">
+						<span class = "percentage-text">%</span>
+					</div>
+					<div class = "input-fields">
+						<label for = "break-even-input">Break Even: </label>
+						<input type = "number" id = "break-even-input" onkeypress = "return inputValidation(event)">
+						<span class = "percentage-text">%</span>
+					</div>
+					<div class = "input-fields">
+						<label>&nbsp</label>
+						<a href = "#results" class = "btn btn-default cal-button" id = "cal-button-variable">Calculate</a>
+					</div>
+				</div>
+				<div class = "tab-pane" id = "fixed-risk">
+					<div class = "input-fields">
+						<label for = "portfolio-value-input2">Initial Portfolio Value: </label>
+						<input type = "number" id = "portfolio-value-input-2" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "trades-input2">No of Trades <br/> (Per Year): </label>
+						<input type = "number" id = "trades-input-2" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "reward-risk-input2">RewardRisk Ratio: </label>
+						<input type = "number" id = "reward-risk-input-2" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "dollar-risk-input">Dollar Value Risk <br/> (Per Trade): </label>
+						<input type = "number" id = "dollar-risk-input" onkeypress = "return inputValidation(event)">
+					</div>
+					<div class = "input-fields">
+						<label for = "double-risk-input">Double Risk As <br/> Portfolio Doubles: </label>
+						<input type = "checkbox" id = "double-risk-input">
+					</div>
+					<div class = "input-fields">
+						<label for = "win-rate-input2">Win Rate: </label>
+						<input type = "number" id = "win-rate-input-2" onkeypress = "return inputValidation(event)">
+						<span class = "percentage-text">%</span>
+					</div>
+					<div class = "input-fields">
+						<label for = "break-even-input2">Break Even: </label>
+						<input type = "number" id = "break-even-input-2" onkeypress = "return inputValidation(event)">
+						<span class = "percentage-text">%</span>
+					</div>
+					<div class = "input-fields">
+						<label>&nbsp</label>
+						<a href = "#results" class = "btn btn-default cal-button" id = "cal-button-fixed">Calculate</a>
+					</div>
+				</div>
+			</div>
+			<!-- </fieldset> -->
+		</section>
+		<section class = "col-xs-12" id = "results-div">
+			<div id = "results">
+				<span class = "span-outline"></span>
+				<h3 id = "result-text">Results</h3>
+				<span class = "span-outline"></span>
+			</div>
+			<div class = "col-xs-12">
+				<div id = "summarized-result" class = "col-xs-12">
+					<p class = "col-xs-12 col-lg-4">Initial Portfolio Value: <span id = "initial"></span></p>
+					<p class = "col-xs-12 col-lg-4">Final Portfolio Value: <span id = "final"></span></p>
+					<p class = "col-xs-12 col-lg-4">Percentage Difference: <span id = "difference"></span>%</p>
+				</div>
+			</div>
+			<ul class = "nav nav-tabs nav-justified" role = "tablist" id = "tabs-results">
+				<li class = "active"><a href = "#result-monthly" role = "tab" data-toggle = "tab">Montly Returns</a></li>
+				<li><a href = "#result-table" role = "tab" data-toggle = "tab">Table of Results</a></li>
+				<li><a href = "#result-graph" role = "tab" data-toggle = "tab">Graphs of Results</a></li>
+			</ul>
+			<div class = "tab-content">
+				<div class = "tab-pane active" id = "result-monthly">
+					<table id = "displayMonthly" class = "table table-bordered">
+						<tr>
+							<th>Month</th>
+							<th>Portfolio Value</th>
+							<th>Percentage Change</th>
+						</tr>
+						<tbody id = "displayMonthlyBody"></tbody>
+					</table>
+				</div>
+				<div class = "tab-pane" id = "result-table">
+					<table id = "displayTable" class = "table table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Win/Lose</th>
+							<th>Portfolio Value</th>
+						</tr>
+						<tbody id = "displayTableBody"></tbody>
+					</table>
+				</div>
+				<div class = "tab-pane" id = "result-graph">
+					<div class = "in-construction">In Construction</div>
+				</div>
+			</div>
+		</section>
+		<script src = "js/jquery-3.1.1.min.js" type = "text/javascript"></script>
+		<script src = "js/bootstrap.min.js" type = "text/javascript"></script>
+		<script src = "js/index.js" type = "text/javascript"></script>
+	</body>
+</html>

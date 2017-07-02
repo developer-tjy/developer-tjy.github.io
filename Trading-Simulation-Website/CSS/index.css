@@ -1,0 +1,301 @@
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#title{
+	margin-top: 1rem;
+	height: 3rem;
+	font-size: 2rem;
+}
+
+#title > p{
+	background: #E8AF0C;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0.5rem;
+	color: ;
+}
+
+/*#inner-input-div{
+	background: #82FF86;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	margin-top: 3rem;
+}*/
+
+/*#inner-input-div > legend{
+	font-size: 2rem;
+	border: 1px solid #B2FFBB;
+	border-bottom: none;
+	background: #82FF86;
+	width: initial;
+	padding: 0.6rem 1rem 0 1rem;
+	 border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    color: #53CEFF;
+    margin-left: 5rem;
+}*/
+
+#tabs-input{
+	margin-top: 2rem;
+}
+
+#tabs-input > li > a{
+	background: #EEFFBD;
+}
+
+#tabs-input > li.active a, #tabs-input > li.active > a:hover, #tabs-input > li.active > a:focus{
+	background: #82FF86;
+}
+
+#tabs-input > li > a:hover, #tabs-input > li > a:focus{
+	background: #C7FF7B;
+}
+
+#tabs-input > li.active a{
+	border-bottom-color: #82FF86
+}
+
+#tabs-input > .left-li > a{
+	border-radius: 20px 0 0 0;
+}
+
+#tabs-input > .right-li > a{
+	border-radius: 0 20px 0 0;
+}
+
+
+#inner-input-div{
+	background: #82FF86;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+}
+
+.input-fields{
+	display: block;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 0.5rem;
+}
+
+.input-fields > label{
+	width: 45%;
+	text-align: right;
+}
+
+.input-fields > input{
+	border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    min-width: 5%;
+    width: 20%;
+    padding-left: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.input-fields >input:focus{
+	-moz-box-shadow: 0 0 5px #88D5E9;
+    -webkit-box-shadow: 0 0 5px #88D5E9;
+    box-shadow: 0 0 5px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+
+#double-risk-input{
+	width: auto;
+}
+
+.cal-button{
+	font-size: 1.4rem;
+	margin-bottom: 0.5rem;
+}
+
+#results-div{
+	font-size: 1.2rem;
+	display: none;
+	margin-bottom: 1.5rem;
+	margin-top: 1.5rem 
+}
+
+.span-outline{
+	outline: 1px solid #FF6F46;
+	display: inline-block;
+	width: 40%;
+}
+
+#result-text{
+	width: 18%;
+	display: inline-block;
+	text-align: center;
+	font-size: 2rem;
+}
+
+#summarized-result{
+	margin-top: 1.3rem;
+	margin-bottom: 1rem;
+}
+
+.tab-content{
+	border: 1px solid #ddd;
+	border-top: none;
+	padding: 1rem;
+}
+
+.in-construction{
+	border: 1px solid black;
+	box-shadow: 5px 5px 5px #88D5E9;
+	-webkit-box-shadow: 5px 5px 5px #88D5E9;
+	-moz-box-shadow: 5px 5px 5px #88D5E9;
+	margin: 0 auto;
+	width: 40%;
+	padding: 1rem;
+	text-align: center;
+}
+
+/*------ Media Queries -----------*/
+@media only screen and (max-width : 1199px){
+	#summarized-result > p{
+		margin-bottom: 1rem;
+	}
+}
+
+@media only screen and (max-width : 768px){
+	#inner-input-div > legend{
+		font-size: 1.5rem;
+		margin-left: 1.7rem;
+	}
+
+	.input-fields{
+		font-size: 1.2rem; 
+	}
+
+	.input-fields > label{
+		width: 50%;
+	}
+
+	.cal-button{
+		font-size: 1.2rem;
+	}
+
+	.span-outline{
+		width: 37%;
+	}
+
+	.input-fields > input{
+		width: 30%;
+	}
+
+	#results-div{
+		font-size: 1.2rem;
+	}
+
+	#result-text{
+		font-size: 1.5rem   
+	}
+
+	.nav-justified > li {
+		display: table-cell !important;
+		width: 1%
+	}
+
+	.nav-justified > li > a  {
+		border-bottom: 1px solid #ddd !important;
+		border-radius: 4px 4px 0 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	.nav-tabs > li.active > a{
+		border-bottom-color: transparent !important;
+	}
+}
+
+@media only screen and (max-width : 480px){
+	#title{
+		font-size: 1.5rem;
+	}
+
+	#inner-input-div > legend{
+		font-size: 1.3rem;
+		margin-left: 1.8rem;
+	}
+
+	.input-fields{
+		font-size: 0.8rem; 
+	}
+
+	.input-fields > label{
+		width: 55%;
+	}
+
+	.input-fields > input{
+		width: 30%;
+	}
+
+	.cal-button{
+		font-size: 0.8rem;
+	}
+
+	.span-outline{
+		width: 34%;
+	}
+
+	#results-div{
+		font-size: 0.9rem;
+	}
+
+	#result-text{
+		width: 28%;
+		font-size: 1.3rem;
+	}
+}
